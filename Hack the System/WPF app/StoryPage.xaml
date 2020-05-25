@@ -1,0 +1,41 @@
+﻿<Page x:Class="Wpf.StoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="StoryPage"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+      >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Margin="0 200 0 0" Style="{StaticResource ProfileTextBlockStyle}" TextWrapping="Wrap" TextAlignment="Justify" Width="765" Height="622"  >
+                A nagy Neptun leállás után... 
+                <LineBreak/><LineBreak/>
+                Schmuck Balázs eltűnését követően...
+                <LineBreak/><LineBreak/>
+                Az Óbudai Egyetem belső védelmi rendszere meggyengült. A szerver karbantartó rendszergazdák elvesztették privát kulcsaikat, melyek lehetőséget biztosítottak birtokosaiknak, hogy belépjenek a SZENT NEPTUN rendszerbe.
+                <LineBreak/><LineBreak/>
+                Ezekben a kaotikus időkben egy kis hacker csapat szerveződött, hogy megpróbálják a hibás szervereken keresztűl megszerezni Szabó Zs. privát kulcsát és ezzel elérni a Prog 4 ötöst.
+                <LineBreak/><LineBreak/>
+                A hecker csapat élére TÉGED választottak!
+                <LineBreak/><LineBreak/>
+                Így hát küldetésed feltörni a szervergépeket, amelyek közéd és az ÖTÖS közé állnak!!!
+    
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"> 
+            <Button Content="BACK" Command="{Binding Nav_ToMainMenuPageFromStroyCommand}" Style="{StaticResource MainMenuStyle}" />
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -1,0 +1,43 @@
+﻿<Page x:Class="Wpf.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf"
+      xmlns:ga="clr-namespace:Wpf.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Height="1080"
+      Title="GamePage"
+      Loaded="Page_Loaded"
+      MouseLeftButtonUp="Page_MouseLeftButtonUp"
+      MouseLeftButtonDown="Page_MouseLeftButtonDown"
+      MouseMove="Page_MouseMove"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Ingame}" MouseRightButtonDown="Page_MouseRightButtonDown"
+      >    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition  Height="1*"/>
+            <RowDefinition  x:Name="GameArea" Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Panel.ZIndex="1" Orientation="Horizontal" DataContext="{Binding Source={StaticResource Locator}, Path=Main}" Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <StackPanel Grid.ColumnSpan="2" x:Name="Debug" Visibility="Hidden">
+                <Label Style="{StaticResource MainMenuTextStyle}" FontSize="15" HorizontalAlignment="Left" x:Name="MousePosText2" Content="test"/>                
+            </StackPanel>
+            <Button DataContext="{Binding Source={StaticResource Locator}, Path=Ingame}" Command="{Binding Show_IngameMenuCommand}" Margin="0 0 30 0" Style="{StaticResource IngameMenuIcon}"/>
+        </StackPanel>
+        
+        <ga:GameArea x:Name="GA" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2" />
+
+        <Frame x:Name="PauseWindowFrame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" Grid.ColumnSpan="4">
+        </Frame>
+
+    </Grid>
+</Page>

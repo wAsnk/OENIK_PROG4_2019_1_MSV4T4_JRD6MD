@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProfilesFile>
+  <Default>
+    <Name>Pici</Name>
+  </Default>
+  <Profiles>
+    <Profile>
+      <Name>Krisz</Name>
+      <CampaignScores>2845#2860</CampaignScores>
+      <CompletedRandomLevelCount>16</CompletedRandomLevelCount>
+    </Profile>
+    <Profile>
+      <Name>Azaliusz</Name>
+      <CampaignScores>2835#2830#2745</CampaignScores>
+      <CompletedRandomLevelCount>0</CompletedRandomLevelCount>
+    </Profile>
+    <Profile>
+      <Name>Pici</Name>
+      <CampaignScores>2585#2825#2195</CampaignScores>
+      <CompletedRandomLevelCount>1</CompletedRandomLevelCount>
+    </Profile>
+  </Profiles>
+</ProfilesFile>

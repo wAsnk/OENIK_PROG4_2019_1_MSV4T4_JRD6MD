@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MapsFile>
+  <Maps>
+    <Map>
+      <MapSize>15,8</MapSize>
+      <Fields></Fields>
+      <PowerLimit>120</PowerLimit>
+      <Players>LocalHumanPlayer#EasyCpu</Players>
+      <GameObjects>
+        <Server>Active#LocalHumanPlayer#80#75#75</Server>
+        <Server>Active#LocalHumanPlayer#30#725#325</Server>
+        <Server>Active#LocalHumanPlayer#50#275#225</Server>
+        <Server>Active#EasyCpu#80#575#375</Server>
+        <Server>Active#EasyCpu#80#425#25</Server>
+        <Server>Inactive#30#75#375</Server>
+      </GameObjects>  
+    </Map>
+    <Map>
+      <MapSize>11,9</MapSize>
+      <Fields></Fields>
+      <PowerLimit>40</PowerLimit>
+      <Players>LocalHumanPlayer#EasyCpu</Players>
+      <GameObjects>
+        <Server>Active#LocalHumanPlayer#30#125#75</Server>
+        <Server>Active#LocalHumanPlayer#30#125#375</Server>
+        <Server>Active#LocalHumanPlayer#30#75#225</Server>
+        <Server>Active#EasyCpu#40#425#125</Server>
+        <Server>Active#EasyCpu#40#425#325</Server>
+        <Router>Inactive#30#275#225</Router>
+        <FireWall>275#75</FireWall>
+        <FireWall>275#125</FireWall>
+        <FireWall>275#325</FireWall>
+        <FireWall>275#375</FireWall>
+        <FireWall>175#175</FireWall>
+        <FireWall>225#175</FireWall>
+        <FireWall>175#275</FireWall>
+        <FireWall>225#275</FireWall>
+        <FireWall>425#225</FireWall>
+      </GameObjects>
+    </Map>
+    <Map>
+      <MapSize>20,14</MapSize>
+      <Fields></Fields>
+      <PowerLimit>120</PowerLimit>
+      <Players>LocalHumanPlayer#HardCpu</Players>
+      <GameObjects>
+        <Server>Active#LocalHumanPlayer#80#875#475</Server>
+        <Server>Active#LocalHumanPlayer#30#825#625</Server>
+        <Server>Active#HardCpu#50#175#75</Server>
+        <Server>Active#HardCpu#80#125#225</Server>
+
+        <Server>Inactive#30#375#225</Server>
+        <Server>Inactive#30#375#475</Server>
+        <Server>Inactive#30#625#225</Server>
+        <Server>Inactive#30#625#475</Server>
+
+        <FireWall>475#125</FireWall>
+        <FireWall>525#125</FireWall>
+        
+        <FireWall>275#325</FireWall>
+        <FireWall>275#375</FireWall>
+        
+        <FireWall>475#575</FireWall>
+        <FireWall>525#575</FireWall>
+
+        <FireWall>725#325</FireWall>
+        <FireWall>725#375</FireWall>
+
+        <FireWall>475#325</FireWall>
+        <FireWall>475#375</FireWall>
+        <FireWall>525#325</FireWall>
+        <FireWall>525#375</FireWall>
+
+        <Router>Inactive#30#125#575</Router>
+        <Router>Inactive#30#875#125</Router>
+        
+      </GameObjects>
+    </Map>
+  </Maps>
+</MapsFile>

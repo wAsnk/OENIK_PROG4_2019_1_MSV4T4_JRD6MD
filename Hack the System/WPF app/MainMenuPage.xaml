@@ -1,0 +1,31 @@
+﻿<Page x:Class="Wpf.MainMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf"
+      xmlns:wm ="clr-namespace:Wpf.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="Hack The System - MainMenu"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+      >    
+
+
+    <Grid Background="Transparent">       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Width="400" x:Name="SP_MainMenu" Background="Transparent" HorizontalAlignment="Center" Grid.Row="1" >
+
+            <Button x:Name="bt_play" Tag="Play" Command="{Binding Nav_ToPlayMenuPageCommand}" Content="PLAY" Style="{StaticResource MainMenuStyle}"/>
+            <Button Tag="Profiles" Content="PROFILES" Command="{Binding Nav_ToProfilePageCommand}" Style="{StaticResource MainMenuStyle}"/>
+            <Button Tag="Story" Content="STORY" Command="{Binding Nav_ToStoryPageCommand}" Style="{StaticResource MainMenuStyle}"/>            
+            <Button Tag="Credits" Content="CREDITS" Command="{Binding Nav_ToCreditsPageCommand}" Style="{StaticResource MainMenuStyle}"/>
+            <Button Tag="Exit" Content="EXIT" Click="Exit" Style="{StaticResource MainMenuStyle}"/>
+        </StackPanel>
+    </Grid>
+
+</Page>

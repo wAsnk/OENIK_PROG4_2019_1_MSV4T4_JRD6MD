@@ -1,0 +1,83 @@
+﻿<Page x:Class="Wpf.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf"      
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="ProfilePage"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+      >
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3.8*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox SelectionChanged="ListBox_SelectionChanged" Margin="100 0 100 20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding ProfileAll}" SelectedItem="{Binding SelectedProfile}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Background="Transparent"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="{Binding Name}" Style="{StaticResource MainMenuTextStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button  Content="NEW" Command="{Binding NewProfileCommand}" Style="{StaticResource MainMenuStyle}"/>
+            <Button  Content="SELECT" Command="{Binding SelectProfileCommand}"  Style="{StaticResource MainMenuStyle}"/>
+            <Button  Content="DELETE" Command="{Binding DelProfileCommand}"  Style="{StaticResource MainMenuStyle}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="3" VerticalAlignment="Center">
+            <Button  Content="BACK" Command="{Binding Nav_ToMainMenuCommand}" Style="{StaticResource MainMenuStyle}"/>
+        </StackPanel>
+
+        <!--<StackPanel Grid.Column="0" Grid.Row="4">
+            <Label Margin="20 0 0 0" Content="{Binding ActualProfile.Name}" Style="{StaticResource MainMenuTextStyle}" ContentStringFormat="Selected profile: {0}" />
+        </StackPanel>-->
+
+
+        <!-- NEW COLUMN -->
+        <StackPanel HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Orientation="Vertical" x:Name="sp_Statistics" Visibility="Visible" DataContext="{Binding SelectedProfile}">
+            <!--
+            Name: 
+            Completed:
+            Total score:
+            Best score:
+            Level:
+            Completed random levels:
+            -->
+            <Label  Content="{Binding Name}" ContentStringFormat="Name: {0}" Style="{StaticResource MainMenuTextStyle}"/>
+            <Label  Content="{Binding CompletedLevelCount}" ContentStringFormat="Completed levels: {0}" Style="{StaticResource MainMenuTextStyle}"/>
+            <Label  Content="{Binding CompletedRandomLevelCount}" ContentStringFormat="Completed random levels: {0}" Style="{StaticResource MainMenuTextStyle}"/>
+            <Label  Content="{Binding TotalScore}" ContentStringFormat="Total score: {0}" Style="{StaticResource MainMenuTextStyle}"/>
+            <Label  Content="{Binding BestScore}" ContentStringFormat="Best score: {0}" Style="{StaticResource MainMenuTextStyle}"/>            
+            
+            <ListBox BorderBrush="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" ItemsSource="{Binding SelectedProfile.CampaignScore}" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label Content="{Binding}" ContentStringFormat="Campaign score: {0}" Style="{StaticResource MainMenuTextStyle}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="sp_NewProfile"  Grid.Column="1" 
+                    Grid.Row="1" Orientation="Vertical" Visibility="Hidden">
+            <Label Margin="2 2 2 2" Content="New profile name: " HorizontalContentAlignment="Center" Style="{StaticResource MainMenuTextStyle}"/>
+            <TextBox x:Name="tb_NewProfileName" Height="50" Width="200" Text="{Binding NewProfileName, Mode=TwoWay}" Style="{StaticResource ProfileTextBoxStyle}" Background="Transparent" />
+            <Button Content="SAVE" Style="{StaticResource MainMenuStyle}" Command="{Binding SaveNewProfileCommand}" MaxWidth="200"/>            
+            <Label Content="{Binding ProfileAlreadyExists}" Style="{StaticResource MainMenuTextStyle}" />
+            
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -1,0 +1,37 @@
+﻿<Page x:Class="Wpf.CreditsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+      Title="CampaignPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <Label Content="Created by" Style="{StaticResource MainMenuTextStyle}" FontSize="35"  HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="800">
+                <Label Content="Frontend" Style="{StaticResource MainMenuTextStyle}" FontSize="35" Margin="70 0 300 0"/>
+                <Label Content="Backend" Style="{StaticResource MainMenuTextStyle}" FontSize="35" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="800">
+                <Label Content="Krisztián Németh" Style="{StaticResource MainMenuTextStyle}" FontSize="35" Margin="0 0 200 0" />
+                <Label Content="Ferenc Győri" Style="{StaticResource MainMenuTextStyle}" FontSize="35" />
+            </StackPanel>
+            <StackPanel>
+                <MediaElement x:Name="creditsVideoPlayer"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="BACK" Command="{Binding Nav_ToMainMenuCommand}" Style="{StaticResource MainMenuStyle}" Width="300" Margin="0 0 30 0" />
+        </StackPanel>
+
+    </Grid>
+</Page>
